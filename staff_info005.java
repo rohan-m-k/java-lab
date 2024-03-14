@@ -1,3 +1,4 @@
+import java.util.*;
 class staff
 {
 String name;
@@ -5,15 +6,22 @@ int staffid;
 long pno;
 double salary;
 
-staff (String a,int b,long c,double d)
+
+void staffinput()
 {
-name=a;
-staffid=b;
-pno=c;
-salary=d;
+Scanner sc=new Scanner(System.in);
+
+System.out.println("enter name: ");
+name=sc.nextLine();
+System.out.println("enter staff id:");
+staffid=sc.nextInt();
+System.out.println("enter phone number:");
+pno=sc.nextLong();
+System.out.println("enter salary:");
+salary=sc.nextDouble();
 }
 
-void output()
+void staffoutput()
 {
 System.out.println("name is:"+name);
 System.out.println("staff identity is:"+staffid);
@@ -26,48 +34,55 @@ class teaching extends staff
 {
 String domain;
 int no_pub;
-
-teaching (String a,int b)
-{
-super("abc",340,4856754,234564);
-domain=a;
-no_pub=b;
+void input_teaching(){
+	super.staffinput();
+	Scanner z=new Scanner(System.in);
+	System.out.println("enter the domain and number of publication");
+	domain=z.nextLine();
+	no_pub=z.nextInt();
 }
-void output1()
+void display_teaching ()
 {
-super.output();
-System.out.println("technical domain is:"+domain);
-System.out.println("technical no publicationis:"+no_pub);
+	super.staffoutput();
+	System.out.println("domain:"+domain+"pubilcation:"+no_pub);
 }
 }
 
 class technical extends staff
 {
 String skill;
-technical(String a)
+void input_technical()
 {
-super("bcd",420,324823,500000);
-skill=a;
+	super.staffinput();
+	Scanner z=new Scanner(System.in);
+	System.out.println("enter the skill ");
+	skill=z.nextLine();
 }
-void output2()
+void output_technical()
 {
-super.output();
-System.out.println("technical skill is:"+skill);
+	super.staffoutput();
+	Scanner z=new Scanner(System.in);
+	System.out.println("skill="+skill);
 }
 }
+	
+
 
 class contract extends staff
 {
-int pr;
-contract(int a)
+int period;
+void inputcontract()
 {
-super("cde",840,8789124,600000);
-pr=a;
+super.staffinput();
+Scanner z=new  Scanner(System.in);
+System.out.println("enter the peroid ofcontact ");
+period=z.nextInt();
 }
-void output3()
+void contractoutput3()
 {
-super.output();
-System.out.println("contract pr is:"+pr);
+super.staffoutput();
+
+System.out.println("contract pr is:"+period);
 }
 }
 
@@ -75,25 +90,18 @@ class staff_info005
 {
 public static void main(String args[])
 {
-teaching t1=new teaching("cn",8);
-t1.output1();
-technical p1=new technical("hardware");
-p1.output2();
-contract c1=new contract(365);
-c1.output3();
+	System.out.println("enter the teaching fields information");
+teaching t1=new teaching();
+t1.input_teaching();
+t1.display_teaching();
+System.out.println("include technical field information");
+technical p1=new technical();
+p1.input_technical();
+p1.output_technical();
+System.out.println("include contract field information");
+contract c1=new contract();
+c1.inputcontract();
+c1.contractoutput3();
 }
 }
 
-/*void input()
-{
-Scanner sc=new Scanner(System.in);
-Scanner s=new Scanner(System.in);
-System.out.println("enter name: ");
-name=sc.nextLine();
-System.out.println("enter staff id:");
-staffid=s.nextInt();
-System.out.println("enter phone number:");
-pno=s.nextLong();
-System.out.println("enter salary:");
-salary=s.nextDouble();
-}*/
