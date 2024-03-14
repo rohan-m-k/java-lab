@@ -18,6 +18,7 @@ class animals
 {
 public static void main (Strings [] args)
 {
+  animal a=new animal();
 p.eat();
 dog d=new dog();
 d.bark();
