@@ -1,26 +1,24 @@
-class animal()
-{
-void eat()
-{
-System.out.println("eating");
+
+class Animal {
+    void eat() {
+        System.out.println("eating");
+    }
 }
+class Dog extends Animal {
+    void bark() {
+        System.out.println("barking");
+    }
 }
 
-class dog extends animal
-{
-void bark()
-{
-System.out.println("barking");
-}
+
+public class animal004{
+    public static void main(String[] args) {
+        Animal a = new Animal(); 
+        a.eat(); 
+        
+        Dog d = new Dog(); 
+       
+        d.bark(); 
+    }
 }
 
-class animals
-{
-public static void main (Strings [] args)
-{
-  animal a=new animal();
-p.eat();
-dog d=new dog();
-d.bark();
-}
-}
