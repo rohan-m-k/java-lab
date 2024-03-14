@@ -30,7 +30,7 @@ return (rintr);
 }
 }
 
-class method_overriding3
+class method_overriding004
 {
 public static void main(String args[])
 {
